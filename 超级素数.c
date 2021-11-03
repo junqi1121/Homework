@@ -1,9 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<math.h>
-//³¬¼¶ËØÊı£ºËü±¾Éí£¬¸÷Î»Êı×ÖµÄºÍ£¬¸÷Î»Êı×ÖµÄÆ½·½ºÍ£¬¶¼ÊÇËØÊı¡£
-//Çó 100~10000 ÄÚµÄËùÓĞ³¬¼¶ËØÊı£¬¼°ËüÃÇµÄÆ½¾ùÊı¡£
-int isprime(int x)/*ÓÃÓÚËØÊıÅĞ¶ÏµÄº¯Êı*/
+//è¶…çº§ç´ æ•°ï¼šå®ƒæœ¬èº«ï¼Œå„ä½æ•°å­—çš„å’Œï¼Œå„ä½æ•°å­—çš„å¹³æ–¹å’Œï¼Œéƒ½æ˜¯ç´ æ•°ã€‚
+//æ±‚ 100~10000 å†…çš„æ‰€æœ‰è¶…çº§ç´ æ•°ï¼ŒåŠå®ƒä»¬çš„å¹³å‡æ•°ã€‚
+int isprime(int x)/*ç”¨äºç´ æ•°åˆ¤æ–­çš„å‡½æ•°*/
 {
 	int y = 2;
 	for (y = 2; y <= sqrt(x); y++)
@@ -15,24 +15,24 @@ int isprime(int x)/*ÓÃÓÚËØÊıÅĞ¶ÏµÄº¯Êı*/
 	}
 	return 1;
 }
-int sumofweights(int x)/*Çó¸÷¸öÎ»ÊıÖ®ºÍµÄº¯Êı*/
+int sumofweights(int x)/*æ±‚å„ä¸ªä½æ•°ä¹‹å’Œçš„å‡½æ•°*/
 {
 	if (x < 10)
 	{
 		return x;
 	}
-	if (x > 10)
+	if (x >= 10)
 	{
 		return (x % 10 + sumofweights(x / 10));
 	}
 }
-int sqreofweights(int x)/*Çó¸÷¸öÎ»ÊıÆ½·½ºÍµÄº¯Êı*/
+int sqreofweights(int x)/*æ±‚å„ä¸ªä½æ•°å¹³æ–¹å’Œçš„å‡½æ•°*/
 {
 	if (x < 10)
 	{
 		return x * x;
 	}
-	if (x > 10)
+	if (x >= 10)
 	{
 		return(sqreofweights(x % 10) + sqreofweights(x / 10));
 	}
@@ -42,7 +42,7 @@ int main()
 	int a = 10;
 	double average = 0;
 	int count = 0;
-	printf("10-10000ÄÚµÄ³¬¼¶ËØÊıÎª£º\n");
+	printf("10-10000å†…çš„è¶…çº§ç´ æ•°ä¸ºï¼š\n");
 	for (a = 10; a < 10000; a++)
 	{
 		if (isprime(a))
@@ -59,7 +59,7 @@ int main()
 			}
 		}
 	}
-	printf("10-10000ÄÚ¹²ÓĞ%d¸ö³¬¼¶ËØÊı\n", count);
-	printf("ËûÃÇµÄÆ½¾ùÊıÎª%lf", average / count);
+	printf("10-10000å†…å…±æœ‰%dä¸ªè¶…çº§ç´ æ•°\n", count);
+	printf("ä»–ä»¬çš„å¹³å‡æ•°ä¸º%lf", average / count);
 	return 0;
 }
